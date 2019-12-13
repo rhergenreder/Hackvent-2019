@@ -16,7 +16,7 @@ import org.apache.commons.io.IOUtils;
 public class NotesBean implements Serializable {
 
 	/**
-	 *
+	 * 
 	 */
 	private PatriciaTrie<Integer> trie = init();
 	private static final long serialVersionUID = 1L;
@@ -42,18 +42,20 @@ public class NotesBean implements Serializable {
 	public void setTrie(String note) {
 		trie.put(unescapeJava(note), 0);
 	}
+		
+    private static PatriciaTrie<Integer> init(){
+        PatriciaTrie<Integer> trie = new PatriciaTrie<Integer>();
+        trie.put(securitytoken,0);
 
-  private static PatriciaTrie<Integer> init(){
-    PatriciaTrie<Integer> trie = new PatriciaTrie<Integer>();
-    trie.put(securitytoken,0);
-    return trie;
-  }
+        return trie;
+    }
 
-  private static boolean isAdmin(PatriciaTrie<Integer> trie){
-    return !trie.containsKey(securitytoken);
-  }
+    private static boolean isAdmin(PatriciaTrie<Integer> trie){
+        return !trie.containsKey(securitytoken);
+    }
 
-  private static InputStream getStreamFromResourcesFolder(String filePath) {
-  	return Thread.currentThread().getContextClassLoader().getResourceAsStream(filePath);
-  }
+    private static InputStream getStreamFromResourcesFolder(String filePath) {
+    	  return Thread.currentThread().getContextClassLoader().getResourceAsStream(filePath);
+    	 }
+
 }
