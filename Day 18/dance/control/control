@@ -1,0 +1,10 @@
+Package: com.hacking-lab.dance
+Name: dance
+Architecture: iphoneos-arm
+Description: An awesome tool of some sort!!
+Maintainer: hardlock
+Author: hardlock
+Section: System
+Tag: role::hacker
+Version: 0.0.1
+Installed-Size: 196

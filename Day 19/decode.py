@@ -26,7 +26,7 @@ initialSize = len(unicodes)
 print("Loaded %d unicodes" % initialSize)
 
 def tryUnicode(unicode):
-    process = subprocess.Popen(["./test"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    process = subprocess.Popen(["./main"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     process.stdin.write(unicode)
     process.stdin.write(b'\n')
     process.stdin.flush()

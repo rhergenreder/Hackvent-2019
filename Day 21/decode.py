@@ -29,6 +29,7 @@ def tryPassword(pw):
     try:
         decrypted = cipher.decrypt(encrypted)
         print(decrypted.decode('utf-8'))
+        exit(0)
         return True
     except Exception as e:
         print(str(e))
@@ -37,8 +38,8 @@ def tryPassword(pw):
 def doWork():
     while not PASSWORD_QUEUE.empty():
         pw = PASSWORD_QUEUE.get()
-        if tryPassword(pw):
-            print("Done?")
+        tryPassword(pw)
+
 
 with open("/usr/share/wordlists/SecLists/Passwords/Leaked-Databases/rockyou.txt", "rb") as f:
     for pw in f.readlines():
