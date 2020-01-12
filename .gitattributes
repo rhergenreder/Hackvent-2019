@@ -1,2 +1,0 @@
-*.dmp filter=lfs diff=lfs merge=lfs -text
-"Day 15/Santa's workshop_files/*" linguist-detectable=false
